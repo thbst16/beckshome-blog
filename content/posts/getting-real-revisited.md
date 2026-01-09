@@ -1,0 +1,8 @@
+---
+title: "Getting Real - Revisited"
+date: 2006-10-26
+tags: ["Book Reviews"]
+draft: false
+---In a previous posting, I reviewed the 37signals book <i>Getting Real</i> and encouraged folks to pick up a copy. The good news is that the full text for this book has recently been released online. You can find the HTML version of the book [here](https://basecamp.com/books/getting-real). You no longer have any excuse not to read it.
+
+![Getting Real - The Book](https://s3.amazonaws.com/s3.beckshome.com/20060709-Getting-Real-The-Book.png)
