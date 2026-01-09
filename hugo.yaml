@@ -1,0 +1,182 @@
+baseURL: "https://blog.beckshome.com/"
+title: "Beckshome Blog"
+pagination:
+  pagerSize: 10
+theme: "PaperMod"
+
+# Build settings
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+# Minification
+minify:
+  disableXML: true
+  minifyOutput: true
+
+# Language
+languageCode: "en-us"
+defaultContentLanguage: "en"
+
+# Taxonomies
+taxonomies:
+  tag: tags
+  category: categories
+
+# Permalinks (maintain URL structure if needed)
+permalinks:
+  posts: "/:year/:month/:slug/"
+
+# Menu
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 10
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 20
+    - identifier: archives
+      name: Archives
+      url: /archives/
+      weight: 30
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 40
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 50
+
+# PaperMod specific parameters
+params:
+  # Environment
+  env: production
+
+  # Site metadata
+  title: "Beckshome Blog"
+  description: "Technology insights and development experiences"
+  keywords: ["Blog", "Technology", "Development", "Architecture"]
+  author: "Thomas"
+
+  # Images for social sharing
+  images: ["/images/site-cover.png"]
+
+  # Date format
+  DateFormat: "January 2, 2006"
+
+  # Theme settings
+  defaultTheme: auto  # auto, light, dark
+  disableThemeToggle: false
+
+  # Reading experience
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: false
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+
+  # Comments (configure if using Disqus, Giscus, etc.)
+  comments: false
+
+  # Meta
+  hideMeta: false
+  hideSummary: false
+
+  # Table of contents
+  showtoc: true
+  tocopen: false
+
+  # Assets/favicon
+  assets:
+    favicon: "/favicon.ico"
+    favicon16x16: "/favicon-16x16.png"
+    favicon32x32: "/favicon-32x32.png"
+    apple_touch_icon: "/apple-touch-icon.png"
+
+  # Label (top-left branding)
+  label:
+    text: "Beckshome"
+    icon: "/apple-touch-icon.png"
+    iconHeight: 35
+
+  # Home page mode: regular, profile, or homeInfoParams
+  homeInfoParams:
+    Title: "Welcome to Beckshome Blog"
+    Content: >
+      Technology insights, development experiences, and architectural patterns.
+      Exploring enterprise software, cloud architecture, and modern development practices.
+
+  # Social icons (shown on home page)
+  socialIcons:
+    - name: github
+      url: "https://github.com/thbst16"
+    - name: linkedin
+      url: "https://linkedin.com/in/yourprofile"
+    - name: rss
+      url: "/index.xml"
+
+  # Cover image defaults
+  cover:
+    hidden: false
+    hiddenInList: false
+    hiddenInSingle: false
+
+  # Edit post link (optional - links to GitHub)
+  editPost:
+    URL: "https://github.com/thbst16/beckshome-blog/tree/main/content"
+    Text: "Suggest Changes"
+    appendFilePath: true
+
+  # Search (Fuse.js)
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+# Privacy settings
+privacy:
+  disqus:
+    disable: true
+  googleAnalytics:
+    disable: true
+  instagram:
+    disable: true
+  x:
+    disable: true
+  vimeo:
+    disable: true
+  youtube:
+    disable: true
+
+# Markup settings
+markup:
+  goldmark:
+    renderer:
+      unsafe: true  # Allow HTML in markdown
+  highlight:
+    noClasses: false
+    codeFences: true
+    guessSyntax: true
+    lineNos: false
+    style: dracula
+
+# Output formats
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON  # Required for search

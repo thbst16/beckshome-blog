@@ -10,6 +10,11 @@ project.lock.json
 /output/
 /wwwroot/
 
+# Hugo outputs
+/public/
+/resources/
+.hugo_build.lock
+
 # Mermaid output
 /input/img/mermaid/*.svg
 
