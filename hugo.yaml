@@ -70,14 +70,14 @@ params:
     rss: true
     github: "https://github.com/thbst16"
 
-  # Menu items (hrefs without leading slash for relLangURL)
+  # Menu items
   additional_menus:
     - title: "ARCHIVE"
-      href: "archive"
+      href: "archive/"
     - title: "TAGS"
-      href: "tags"
+      href: "tags/"
     - title: "ABOUT"
-      href: "about"
+      href: "about/"
 
 # Markup settings
 markup:
