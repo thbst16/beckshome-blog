@@ -1,4 +1,4 @@
-baseURL: "https://thbst16.github.io/beckshome-blog/"
+baseURL: "https://blog.beckshome.com/"
 title: "Beckshome.com: Thomas Beck's Blog"
 theme: "hugo-theme-cleanwhite"
 languageCode: "en-us"
