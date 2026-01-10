@@ -20,7 +20,7 @@ There are two modifications to the search engine (SearchEngine.cs) to enable sea
 1) A new static method is added (GenerateHighlightedText()), which takes in the components needed by the Lucene.Net.Highlighter library's GetBestFragments() method to surround keywords with the HTML Mark and Strong tags for highlighting.
 2) The existing FacetedSearch method is modified to pass the WaffleHead and WaffleBody text through the GenerateHighlightedText() method to highlight text in these two fields. Lines 135 and 137 below.
 
-<pre data-enlighter-language="csharp">
+```csharp
 using Bogus;
 using Lucene.Net.Analysis;
 using Lucene.Net.Analysis.Standard;
@@ -248,13 +248,13 @@ namespace search.Shared
         }
     }
 }
-</pre>
+```
 
 **Highlighting in the UI**
 
 The changes to Index.razor to support highlighted text are very minimal. Since the Waffle Head and Waffle Body are being displayed in the search results already, the highlighting comes through in the HTML tags added by the GenerateHighlightedText() method. The only thing that needs to be done is to cast the text to markup using(MarkupString) so that the HTML tags aren't rendered literally. You can find this in lines 131 and 137 of the Index.razor code below.
 
-<pre data-enlighter-language="csharp">
+```csharp
 @page "/"
 @inject NavigationManager NavManager
 
@@ -521,13 +521,13 @@ The changes to Index.razor to support highlighted text are very minimal. Since t
         }
     }
 }
-</pre>
+```
 
 **Highlighting - Enablement**
 
 Finally, the Lucene.Net.Hihglighter library is added to the project in the .csproj file.
 
-<pre data-enlighter-language="xml">
+```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
@@ -552,4 +552,4 @@ Finally, the Lucene.Net.Hihglighter library is added to the project in the .cspr
   </ItemGroup>
 
 </Project>
-</pre>
+```

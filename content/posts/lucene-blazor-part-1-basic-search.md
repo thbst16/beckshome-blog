@@ -17,7 +17,7 @@ The sample application generates sample waffle text, indexes this text and provi
 
 Several NuGet packages are required to run the application, as illustrated in the search.csproj file below. These packages include the latest pre-releases of the Lucene.Net framework and supporting packages for the search engine, BlazorStrap for Blazor-based UI components and the Bogus data generation library. 
 
-<pre data-enlighter-language="xml">
+```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
@@ -36,13 +36,13 @@ Several NuGet packages are required to run the application, as illustrated in th
   </ItemGroup>
 
 </Project>
-</pre> 
+``` 
 
 **Waffle Text**
 
 The search engine app will be generating and searching on [waffle text](https://www.red-gate.com/simple-talk/development/dotnet-development/the-waffle-generator/). Support for waffle text generation is provided by an ancillary Bogus library. The definition of the waffle text class is provided in WaffleText.cs.
 
-<pre data-enlighter-language="csharp">
+```csharp
 namespace search.Shared
 {
     public class WaffleText
@@ -60,13 +60,13 @@ namespace search.Shared
         }
     }
 }
-</pre>
+```
 
 **Search Model**
 
 The model for handling the search inputs, results count and collection of waffles is defined in the SearchModel.cs class.
 
-<pre data-enlighter-language="csharp">
+```csharp
 using System.ComponentModel.DataAnnotations;
 
 namespace search.Shared
@@ -78,7 +78,7 @@ namespace search.Shared
         public List<WaffleText> SearchResults {get; set;}
     }
 }
-</pre>
+```
 
 **Search Engine**
 
@@ -90,7 +90,7 @@ The magic of the app is handled in the SearchEngine.cs class. This class interac
 
 Both the GetData and Index methods are called during program startup (from the Program.cs file). The Search method is invoked from the Blazor UI with the search text passed in from the user's input.
 
-<pre data-enlighter-language="csharp">
+```csharp
 using Bogus;
 using Lucene.Net.Analysis;
 using Lucene.Net.Analysis.Standard;
@@ -194,13 +194,13 @@ namespace search.Shared
         }
     }
 }
-</pre>
+```
 
 **Search Page**
 
 The last piece of the puzzle is the user-facing Blazor search page that takes the user search input, invokes the engine and returns the search results. All of this functionality is contained in the Blazor page Index.razor.
 
-<pre data-enlighter-language="csharp">
+```csharp
 @page "/"
 
 <PageTitle>Prose Search</PageTitle>
@@ -286,4 +286,4 @@ The last piece of the puzzle is the user-facing Blazor search page that takes th
         SearchText = searchModel.SearchText;
     }
 }
-</pre>
+```

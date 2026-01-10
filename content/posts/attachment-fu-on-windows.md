@@ -16,7 +16,7 @@ There is an abundance of information already written about Attachment_Fu so to a
 
 For my part, I’m going to provide some controller source code for updating the attachment when you have a relationship with another model (an extension of the second item above) since this is one area that wasn’t covered well anywhere else and might save you some time in your travels. In the code below, my main model is the product and the image is the model where a photo and thumbnail are stored using Attachment_Fu.
 
-<pre data-enlighter-language="ruby">
+```ruby
 class ProductController < ApplicationController
     ...
     def update     @product = Product.find(params[:id])
@@ -39,7 +39,7 @@ class ProductController < ApplicationController
         end
     ...
 end
-</pre>
+```
 The links above, in combination with my snippet, should get you through creating an attachment and handling CRUD for an attachment and its parent model from a single view. Now comes the Windows quirkiness. Not knowing to expect these Attachment_Fu quirks and then having to root out the cause of the behavior took up a lot of time. It turns out that most of I found that most of the quirks are documented in some way, shape, or form. I’ve pulled together a list of the quirks as well as some best practice workarounds.
 
 * When running Attachment_Fu on Windows, the most commonly accounted problem is the “Size Is Not Included In List” validation error. It appears that no amount of fixing in the Ruby code is going to help here since it appears to be a Windows file system issue. The workaround is really simple, just add a wait x statement before your attachment processing and things will be golden. The x (which denotes seconds) time will vary based upon the size of the attachments you are processing. Bigger attachments require more of a wait. Also, be sure to comment this code out in production since this is a Windows only issue.

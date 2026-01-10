@@ -13,7 +13,7 @@ The code below represents the most rudimentary and explicit way to construct a G
 
 I plan on posting a follow up in a couple of days with a live GeoRSS feed. I just need to find a nice sized set of simple data that I can load into a database and point my code at. Expect to see this soon.
 
-<pre data-enlighter-language="csharp">
+```csharp
 using System;
 using System.Configuration;
 using System.Data;
@@ -101,4 +101,4 @@ public partial class BlogGeoRss : System.Web.UI.Page
     	this.Response.End();
 	}
 }
-</pre>
+```

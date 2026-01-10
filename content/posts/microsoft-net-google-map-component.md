@@ -9,7 +9,7 @@ The Google Maps Control does just this and more, and hit the sweet spot of platf
 
 The component is well maintained and aligns well with the newest releases of the Google API. It is closed source but free for all use (Jacob’s words) although no license is included in the distribution. Best of all, it enables you to remove all the Javascript references in your .NET source code and use pure C# / VB.NET. The sample below is a snippet from GeoGlue that replaced 60 odd lines of Javascript code scattered across several files. In brief, it sets the latitude, longitude, and markers and then adds a number of markers to the map from a data source — all in pure C#.
 
-<pre data-enlighter-language="csharp">
+```csharp
 GoogleMap.Latitude = double.Parse(locationResult.Latitude);
 GoogleMap.Longitude = double.Parse(locationResult.Longitude);
 GoogleMap.Zoom = 1;
@@ -22,4 +22,4 @@ while (ProductResults.read())
     gm.MarkerText = "<b>" + ProductResults.["Title"].ToString() + "</b><br\>" + ProductResults.["Description"].ToString();
     GoogleMap.Markers.Add(gm);
 }
-</pre>
+```

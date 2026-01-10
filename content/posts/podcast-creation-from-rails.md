@@ -9,7 +9,7 @@ draft: false
 
 I plan on covering the audio/video entry in an upcoming post about the nuances of the Attachment_Fu plugin on Windows. In this post, I’m going to just lay out the code for the podcast creation, since this is nothing more that a simple rxml file. I’ve sprinkled in comments liberally but most of the code should be fairly self explanatory to those familiar with Ruby and RSS feeds.
 
-<pre data-enlighter-language="ruby">
+```ruby
 xml.instruct! ::xml, :version=>"1.0", :encoding=>"UTF-8"
 xml.rss('version' => '2.0') do
     xml.channel do
@@ -52,10 +52,10 @@ xml.rss('version' => '2.0') do
         end
     end
 end
-</pre>
+```
 A couple of lessons learned from my experience. Firstly, Apple provides some good resources on generating podcasts. This is especially important since the iTunes crowd is a large and important contingent of the feed consuming world. There are iTunes-specific tags (and a schema) available. These tags are not mandatory (I didn’t use them here) but they will help you produce a richer feed for consumption within iTunes. Secondly, since the RXML file is just another view, make sure to turn off any default layouts that you might have applied to your other views. I’ve included a snippet below to demonstrate how to do this. Check your version of Rails, mileage may vary with exempt_from_layout based upon your release.
 
-<pre data-enlighter-language="ruby">
+```ruby
 class ApplicationController < ActionController::Base  
 	 
     # Pick a unique cookie name to distinguish our session data from others
@@ -65,5 +65,5 @@ class ApplicationController < ActionController::Base
     ...
  
 end
-</pre>
+```
 My final caveat is not to apply forms-based authentication to your podcast (RXML view). Either make the view public or, if you wish to protect it, do so using HTTP Basic authentication instead. If you’re using both forms-based and HTTP Basic authentication, you’ll probably need to sync the two by using a single LDAP repository. That’s fodder for a completely different post.

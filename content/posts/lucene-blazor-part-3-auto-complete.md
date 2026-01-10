@@ -22,7 +22,7 @@ The sample application let's you search over 3,000 waffle text entries, returnin
 
 The heart of the search ahead function is included in a new method (SearchAhead) in the SearchEngine.cs file. The function creates a dictionary of terms on top of the search index and then searches that for the input text, returning an ordered set of results of words starting with the typed letters. To get this to work, I had to add a new field to the index (HeadBody) because there doesn't seem to be a way to apply a MultiFieldQueryParser over the LuceneDictionary of terms. 
 
-<pre data-enlighter-language="csharp">
+```csharp
 using Bogus;
 using Lucene.Net.Analysis;
 using Lucene.Net.Analysis.Standard;
@@ -193,13 +193,13 @@ namespace search.Shared
         }
     }
 }
-</pre>
+```
 
 **Auto Complete User Interface**
 
 The auto complete user interface is the other place where meaningful changes were required to accommodate auto-complete functionality. These changes include the addition of the Blazored.TypeAhead control to the page and the new HandleTypeAhead method that invokes the search function.
 
-<pre data-enlighter-language="csharp">
+```csharp
 @page "/"
 
 <PageTitle>Prose Search</PageTitle>
@@ -335,13 +335,13 @@ The auto complete user interface is the other place where meaningful changes wer
         searchModel = SearchEngine.Search(searchModel.SearchText, Page);
     }
 }
-</pre>
+```
 
 **Type Ahead Control - Front End**
 
 The Blazored.Typeahead control needs to be added to the _Layout.cshtml file, brining along the requisite JS and CSS files. 
 
-<pre data-enlighter-language="html">
+```html
 @using Microsoft.AspNetCore.Components.Web
 @namespace search.Pages
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
@@ -376,11 +376,11 @@ The Blazored.Typeahead control needs to be added to the _Layout.cshtml file, bri
     <script src="_content/Blazored.Typeahead/blazored-typeahead.js"></script>
     <script src="_framework/blazor.server.js"></script>
 </body>
-</pre>
+```
 
 And the BlazorStrap library using statement needs to be added to the _Imports.razor file.
 
-<pre data-enlighter-language="csharp">
+```csharp
 @using System.Net.Http
 @using Blazored.Typeahead
 @using BlazorStrap
@@ -393,13 +393,13 @@ And the BlazorStrap library using statement needs to be added to the _Imports.ra
 @using Microsoft.JSInterop
 @using search
 @using search.Shared
-</pre>
+```
 
 **Type Ahead - Enablement**
 
 Finally, the Blazored.Typeahead and Lucene.Net.Suggest libraries are added to the project in the .csproj file.
 
-<pre data-enlighter-language="xml">
+```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
@@ -422,5 +422,4 @@ Finally, the Blazored.Typeahead and Lucene.Net.Suggest libraries are added to th
   </ItemGroup>
 
 </Project>
-
-</pre>
+```

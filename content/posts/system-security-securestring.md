@@ -13,7 +13,7 @@ In the case of a SecureString, you don’t have an unsecure String in managed me
 
 The simple console application below exhibits how a SecureString can be properly used and disposed; with the SecureString contents being made available to managed code and the intermediate memory zeroed out when no longer needed.
 
-<pre data-enlighter-language="csharp">
+```csharp
 using System;
 using System.Security;
 using System.Runtime.InteropServices;
@@ -71,11 +71,11 @@ namespace SecureStringExample
         }
     }
 }
-</pre>
+```
 
 This example should be useful to you in working SecureString into your own application. Like any other security measure, there’s a cost to the additional security. In the case of the SecureString, there’s overhead to adding characters to the SecureString as well as marshaling data out of unmanaged memory.  The final reference example I’ll provide is from Microsoft’s SecureString implementation, specifically the code to initialize the secure string. From this code, you can clearly see the check for platform dependencies, buffer allocation, pointer creation and the ProtectMemory() call which invokes the Win32 native RtlEncryptMemory function.
 
-<pre data-enlighter-language="csharp">
+```csharp
 [HandleProcessCorruptedStateExceptions, SecurityCritical]
 private unsafe void InitializeSecureString(char* value, int length)
 {
@@ -103,4 +103,4 @@ private unsafe void InitializeSecureString(char* value, int length)
     }
     this.ProtectMemory();
 }
-</pre>
+```

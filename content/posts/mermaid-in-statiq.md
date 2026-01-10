@@ -13,13 +13,13 @@ I've provided a couple of examples below. As with everything on this blog, the s
 
 Mermaid enables you to use all the major flowchart shapes and to put together some pretty complex mappings, including cross-flow dependencies. The example below is a simplified technology selection process.
 
-<pre data-enlighter-language="md">
+```md
 flowchart LR
     A[Start] --> B(Collect financial business case details)
     B --> C{Financial benefits to moving to cloud}
     C -->|Yes| D[Select cloud service provider]
     C -->|No| E[Remain on-premise]
-</pre>
+```
 
 <img src="/img/mermaid/flowchart.svg"/>
 <br/><br/>
@@ -28,7 +28,7 @@ flowchart LR
 
 Mermaid also pulls off sequence diagrams pretty well, as illustrated by the simplified sequence diagram below.
 
-<pre data-enlighter-language="md">
+```md
 sequenceDiagram
     User-->Application: Update My Address
     Application-->AddressValidationAPI: Validate
@@ -36,7 +36,7 @@ sequenceDiagram
         Application-->User: show failure
     end
     Application-->AddressService: Update User Address
-</pre>
+```
 
 <img src="/img/mermaid/sequence.svg"/>
 <br/><br/>
@@ -45,7 +45,7 @@ sequenceDiagram
 
 Gantt charts for project management can be created via Mermaid as well. Although not suited for large, complex Gantt views, the simplified Mermaid charts are great for overall project status and an overview of activities and key dependencies.
 
-<pre data-enlighter-language="md">
+```md
 gantt
     dateFormat  YYYY-MM-DD
     title       Cloud Migration Mermaid Gantt Charts
@@ -70,6 +70,6 @@ gantt
     Complete compliance documentation   :active, a1, after des1, 3d
     Review Compliance Documentation     :after a1  , 20h
     Revise and Approve Compliance Docs  :doc1, after a1  , 48h
-</pre>
+```
 
 <img src="/img/mermaid/gantt.svg"/>

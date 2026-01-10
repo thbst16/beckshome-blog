@@ -17,7 +17,7 @@ The sample application generates 3,000 waffle text records with the exact count 
 
 The dynamic configuration settings, specifically the size of the waffle text corpus to be generated and the random seed initializer used for generation, are stored in the appsettings.json file and read at runtime.
 
-<pre data-enlighter-language="json">
+```json
 {
     "Logging": {
       "LogLevel": {
@@ -31,13 +31,13 @@ The dynamic configuration settings, specifically the size of the waffle text cor
       "WaffleCount": "3000"
     }
   }
-</pre>
+```
 
 **Dynamic Configuration - Enablement**
 
 The Microsoft.Extensions libraries are added to the project in the .csproj file to enable dynamic, JSON-based configuration.
 
-<pre data-enlighter-language="xml">
+```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
@@ -58,13 +58,13 @@ The Microsoft.Extensions libraries are added to the project in the .csproj file 
   </ItemGroup>
 
 </Project>
-</pre>
+```
 
 **Dynamic Configuration - Activation**
 
 The program's dynamic configuration is implemented in the Program.cs file. The configuration file is open, settings are read and then passed dynamically to the GetData() method of the engine, which generates the sample data.
 
-<pre data-enlighter-language="csharp">
+```csharp
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.Extensions.Configuration;
@@ -106,13 +106,13 @@ app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
 
 app.Run();
-</pre>
+```
 
 **Pagination - Model Enablement**
 
 To enable pagination, additional attributes are added to the SearchModel class to allow for the total count of pages and current page for a specific search.
 
-<pre data-enlighter-language="csharp">
+```csharp
 using System.ComponentModel.DataAnnotations;
 
 namespace search.Shared
@@ -126,13 +126,13 @@ namespace search.Shared
         public List<WaffleText> CurrentPageSearchResults {get; set;}
     }
 }
-</pre>
+```
 
 **Pagination - Implementation**
 
 Pagination is implemented on the back end in the SearchEngine.cs class. The Search method signature and method have been changed significantly from the original post to enable paginated searches. Also, an EscapeSearchTerm function has been added to remove specific characters from the search text. This function is applied to search input within the Search method.
 
-<pre data-enlighter-language="csharp">
+```csharp
 using Bogus;
 using Lucene.Net.Analysis;
 using Lucene.Net.Analysis.Standard;
@@ -270,13 +270,13 @@ namespace search.Shared
         }
     }
 }
-</pre>
+```
 
 **Pagination - User Interface**
 
 Finally, the front-end pagination is added to the Index.razor class. All of this is made much easier through the presence of a very capable [BlazorStrap pagination component](https://blazorstrap.io/V5/components/pagination).
 
-<pre data-enlighter-language="csharp">
+```csharp
 @page "/"
 
 <PageTitle>Prose Search</PageTitle>
@@ -388,4 +388,4 @@ Finally, the front-end pagination is added to the Index.razor class. All of this
         searchModel = SearchEngine.Search(searchModel.SearchText, Page);
     }
 }
-</pre>
+```

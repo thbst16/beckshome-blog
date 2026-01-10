@@ -5,7 +5,7 @@ tags: ["Rails", "Technology Guides"]
 draft: false
 ---I was performing functional tests on my models that employed Attachment_Fu this morning and thought it would be worthwhile to share the code since it was a bit of a hassle pulling it together. Kudos to Mike Subelsky for his introduction to functional testing Attachment_Fu. It got me going in the right direction. What proved difficult once again was the multi-model controller. Once I got over that hump, I was on my way. As you can see from all the detail in the HTTP POST below, that was not an entirely easy task.
 
-<pre data-enlighter-language="ruby">
+```ruby
 class ProductsControllerTest < Test::Unit::TestCase
     ...
     def test_create_with_user    
@@ -31,4 +31,4 @@ class ProductsControllerTest < Test::Unit::TestCase
     end
     ...
 end
-</pre>
+```

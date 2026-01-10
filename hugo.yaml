@@ -79,7 +79,7 @@ params:
 
   # Reading experience
   ShowReadingTime: true
-  ShowShareButtons: true
+  ShowShareButtons: false
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
@@ -96,8 +96,8 @@ params:
   hideMeta: false
   hideSummary: false
 
-  # Table of contents
-  showtoc: true
+  # Table of contents (disabled - most posts use HTML headings)
+  showtoc: false
   tocopen: false
 
   # Assets/favicon

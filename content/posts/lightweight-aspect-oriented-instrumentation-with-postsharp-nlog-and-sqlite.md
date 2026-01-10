@@ -39,7 +39,7 @@ The remainder of this post will focus on the actual implementation of the soluti
 
 The logging configuration file is very similar to [my post on logging with SQLite and NLog](/2010/03/logging-to-sqlite-with-nlog) with minor changes to the SQLite provider version.
 
-<pre data-enlighter-language="xml">
+```xml
 <nlog xmlns="http://www.nlog-project.org/schemas/NLog.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <targets>
         <target name="File" xsi:type="File" fileName="C:Temp${shortdate}.nlog.txt"/>
@@ -61,7 +61,7 @@ The logging configuration file is very similar to [my post on logging with SQLit
         <logger name="*" minlevel="Debug" writeTo="Database" />
     </rules>
 </nlog>
-</pre>
+```
 The most important component of the solution is the source code for the PostSharp aspect. Before letting you loose, I’ve highlighted some of the features of the source code to avoid cluttering it with comments:
 
 * You need to have PostSharp (the DLLs and the necessary build/compilation configuration) set up on your machine for the aspects to work correctly. Specifically, my code works against PostSharp 2.0
@@ -70,7 +70,7 @@ The most important component of the solution is the source code for the PostShar
 * The MDC map stores timing information in all cases and exception information in the case of an Exception in one of the calling methods annotated with the [LogMethodCall] attribute.
 * To use the attribute, just decorate the method you wish to instrument with the [LogMethodCall] attribute. Then sit back and enjoy detailed instrumentation for free.
 
-<pre data-enlighter-language="csharp">
+```csharp
 using System;
 using System.Diagnostics;
 using NLog;
@@ -130,4 +130,4 @@ namespace MvcApp.Web.Aspects
         }
     }
 }
-</pre>
+```

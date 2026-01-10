@@ -23,7 +23,7 @@ There are three significant changes to the SearchEngine.cs class:
 
 The heart of the search ahead function is included in a new method (SearchAhead) in the SearchEngine.cs file. The function creates a dictionary of terms on top of the search index and then searches that for the input text, returning an ordered set of results of words starting with the typed letters. To get this to work, I had to add a new field to the index (HeadBody) because there doesn't seem to be a way to apply a MultiFieldQueryParser over the LuceneDictionary of terms. 
 
-<pre data-enlighter-language="csharp">
+```csharp
 using Bogus;
 using Lucene.Net.Analysis;
 using Lucene.Net.Analysis.Standard;
@@ -238,13 +238,13 @@ namespace search.Shared
         }
     }
 }
-</pre>
+```
 
 **WaffleText Support for Facets**
 
 The base WaffleText class in WaffleText.cs changes to add support for the WaffleScholar and WaffleUniversity facets. Both of these are implemented as separate Enums. 
 
-<pre data-enlighter-language="csharp">
+```csharp
 namespace search.Shared
 {
     public class WaffleText
@@ -266,13 +266,13 @@ namespace search.Shared
         }
     }
 }
-</pre>
+```
 
 **Addition of Enums to Support Faceting**
 
 The WaffleScholar and WaffleUniversity enums were both added to support the new facets.
 
-<pre data-enlighter-language="csharp">
+```csharp
 namespace search.Shared
 {
     public enum WaffleScholar
@@ -287,9 +287,9 @@ namespace search.Shared
        Confucius
     }
 }
-</pre>
+```
 
-<pre data-enlighter-language="csharp">
+```csharp
 namespace search.Shared
 {
     public enum WaffleUniversity
@@ -306,7 +306,7 @@ namespace search.Shared
        Princeton
     }
 }
-</pre>
+```
 
 **Faceted User Interface**
 
@@ -318,7 +318,7 @@ The following changes were necessary:
 * Addition of a new display area housing the facets. This display area iterates over the facets returned from a search and displays them. It also makes calls to the new ScholarFilter() / ScholarRemove() and UniversityFilter() / UniversityRemove() methods to apply the facets and update the search results. 
 * Addition of facet badges for each of the search results to visually show the facets associated with each of the individual results of the search.
 
-<pre data-enlighter-language="csharp">
+```csharp
 @page "/"
 @inject NavigationManager NavManager
 
@@ -585,13 +585,13 @@ The following changes were necessary:
         }
     }
 }
-</pre>
+```
 
 **Facet - Enablement**
 
 Finally, the Lucene.Net.Facet library is added to the project in the .csproj file.
 
-<pre data-enlighter-language="xml">
+```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
@@ -615,4 +615,4 @@ Finally, the Lucene.Net.Facet library is added to the project in the .csproj fil
   </ItemGroup>
 
 </Project>
-</pre>
+```

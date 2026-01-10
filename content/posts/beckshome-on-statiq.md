@@ -13,15 +13,15 @@ There are several lessons I learned beyond what is in the aforementioned blogs. 
 
 The Clean Blog site theme documentation [provides an example](https://github.com/statiqdev/CleanBlog#post-destination-path) of using the _directory.yml file in the posts folder to output posts with computed, date-specific paths. The provided example does the trick for date-specific paths but still handles .MD path extensions. My changes below take care of both the date-based paths and .MD extension handling.
 
-<pre data-enlighter-language="csharp">
+```csharp
 DestinationPath: => $"{Document.GetDateTime("Published").ToString("yyyy/MM")}" + "/" + $"{Document.Destination.FileName}".Replace(".md", "") + ".html"
-</pre>
+```
 
 <h3> Rewrite Rules for Hosting on Azure App Services</h3>
 
 To get the Restful Url routing working and mask the HTML file extension required a custom rewrite rule in a web.config file. Surprisingly, I needed to put in a rule and a custom MIME extension for RSS as well. Very App Service / IIS specific but necessary if you're using these platforms.
 
-<pre data-enlighter-language="xml">
+```xml
 <configuration>
   <system.webServer>
     <staticContent>
@@ -45,13 +45,13 @@ To get the Restful Url routing working and mask the HTML file extension required
     </rewrite>
   </system.webServer>
 </configuration>
-</pre>
+```
 
 <h3>Google Analytics</h3>
 
 If you're looking to add [Google Analytics](https://analytics.google.com/), or other web tracking products, this is really simple in Statiq. Add the Google Analytics javascript to the _head.cshtml file, which should be blank, and go to town.
 
-<pre data-enlighter-language="js">
+```javascript
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR-CODE-HERE"></script>
 <script>
@@ -61,13 +61,13 @@ If you're looking to add [Google Analytics](https://analytics.google.com/), or o
 
   gtag('config', 'G-YOUR-CODE-HERE');
 </script>
-</pre>
+```
 
 <h3>Giscus Commenting</h3>
 
 Adding [giscus commenting](https://giscus.app/) is as easy as dropping some Javascript into the _post-footer.cshtml file. You can generate the specific javascript on the giscus site or replace the fillers below.
 
-<pre data-enlighter-language="js">
+```javascript
 <script src="https://giscus.app/client.js"
         data-repo="YOUR-GITHUB-REPO"
         data-repo-id="YOUR-REPO-ID"
@@ -83,23 +83,23 @@ Adding [giscus commenting](https://giscus.app/) is as easy as dropping some Java
         crossorigin="anonymous"
         async>
 </script>
-</pre>
+```
 
 <h3>Sidebar Social Links</h3>
 
 Adding the social links below the tags in the sidebar is a two-step process. First, add a reference to the social-links partial in the _sidebar.cshtml file.
 
-<pre data-enlighter-language="csharp">
+```csharp
 @Html.Partial("_social-links")
-</pre>
+```
 
 And then adding the following details into the _social-links.cshtml file with your specific links.
 
-<pre data-enlighter-language="csharp">
+```csharp
 <hr class="dark" />
 <div class="text-center">
   <a href="https://twitter.com/YOU-ON-TWITTER"><i class="fab fa-twitter" aria-hidden="true"></i></a>
   <a href="https://www.linkedin.com/in/YOU-ON-LINKEDIN/"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
   <a href="https://www.facebook.com/YOU-ON-FACEBOOK"><i class="fab fa-facebook" aria-hidden="true"></i></a>
 </div>
-</pre>
+```

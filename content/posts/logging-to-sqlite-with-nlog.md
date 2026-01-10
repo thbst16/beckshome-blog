@@ -7,7 +7,7 @@ draft: false
 
 The NLog documentation provides some hints to get you going in the right direction for database-based logging. However, no matter how much spelunking I did around the Net, I couldn’t find a definitive answer on how to configure NLog to use SQLite. The configuration file that worked for me can be found below. Exact mileage may vary based upon your project setup. This should get you 95% of the way there though. Happy logging!
 
-<pre data-enlighter-language="xml">
+```xml
 <nlog xmlns="http://www.nlog-project.org/schemas/NLog.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <targets>
         <target name="File" xsi:type="File" fileName="C:Logfiles${shortdate}.nlog.txt"/>
@@ -27,4 +27,4 @@ The NLog documentation provides some hints to get you going in the right directi
         <logger name="*" minlevel="Debug" writeTo="Database" />
     </rules>
 </nlog>
-</pre>
+```
