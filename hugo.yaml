@@ -1,5 +1,5 @@
 baseURL: "https://blog.beckshome.com/"
-title: "Beckshome Blog"
+title: "Beckshome.com: Thomas Beck's Blog"
 pagination:
   pagerSize: 10
 theme: "PaperMod"
@@ -62,13 +62,13 @@ params:
   env: production
 
   # Site metadata
-  title: "Beckshome Blog"
-  description: "Technology insights and development experiences"
+  title: "Beckshome.com: Thomas Beck's Blog"
+  description: "Musings about technology and things tangentially related"
   keywords: ["Blog", "Technology", "Development", "Architecture"]
-  author: "Thomas"
+  author: "Thomas Beck"
 
   # Images for social sharing
-  images: ["/images/site-cover.png"]
+  images: ["/images/home-bg.jpg"]
 
   # Date format
   DateFormat: "January 2, 2006"
@@ -108,12 +108,21 @@ params:
   label:
     text: "Beckshome"
 
-  # Home page mode: regular, profile, or homeInfoParams
-  homeInfoParams:
-    Title: "Welcome to Beckshome Blog"
-    Content: >
-      Technology insights, development experiences, and architectural patterns.
-      Exploring enterprise software, cloud architecture, and modern development practices.
+  # Home page profile mode with header image
+  profileMode:
+    enabled: true
+    title: "Beckshome.com: Thomas Beck's Blog"
+    subtitle: "Musings about technology and things tangentially related"
+    imageUrl: "/images/home-bg.jpg"
+    imageWidth: 100%
+    imageHeight: auto
+    buttons:
+      - name: Posts
+        url: /posts/
+      - name: Tags
+        url: /tags/
+      - name: Archives
+        url: /archives/
 
   # Social icons (shown on home page)
   socialIcons:
