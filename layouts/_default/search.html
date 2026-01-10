@@ -1,0 +1,69 @@
+{{ define "main" }}
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-container">
+                    <h1>{{ .Title }}</h1>
+
+                    <link href="{{ "pagefind/pagefind-ui.css" | absURL }}" rel="stylesheet">
+                    <script src="{{ "pagefind/pagefind-ui.js" | absURL }}"></script>
+
+                    <div id="search" class="pagefind-search"></div>
+
+                    <script>
+                        window.addEventListener('DOMContentLoaded', (event) => {
+                            new PagefindUI({
+                                element: "#search",
+                                showSubResults: true,
+                                showImages: false
+                            });
+                        });
+                    </script>
+
+                    <style>
+                        .pagefind-ui__search-input {
+                            padding: 12px 20px;
+                            font-size: 16px;
+                            border: 2px solid #ddd;
+                            border-radius: 4px;
+                            width: 100%;
+                        }
+                        .pagefind-ui__search-input:focus {
+                            border-color: #0085a1;
+                            outline: none;
+                        }
+                        .pagefind-ui__result {
+                            padding: 20px 0;
+                            border-bottom: 1px solid #eee;
+                        }
+                        .pagefind-ui__result-link {
+                            color: #404040;
+                            font-size: 20px;
+                            font-weight: 600;
+                        }
+                        .pagefind-ui__result-link:hover {
+                            color: #0085a1;
+                        }
+                        .pagefind-ui__result-excerpt {
+                            color: #666;
+                            margin-top: 8px;
+                        }
+                        [data-theme="dark"] .pagefind-ui__search-input {
+                            background: #2d2d2d;
+                            border-color: #444;
+                            color: #fff;
+                        }
+                        [data-theme="dark"] .pagefind-ui__result-link {
+                            color: #ddd;
+                        }
+                        [data-theme="dark"] .pagefind-ui__result-excerpt {
+                            color: #aaa;
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+{{ end }}

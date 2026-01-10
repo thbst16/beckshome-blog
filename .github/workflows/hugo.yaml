@@ -61,12 +61,13 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
 
-      - name: List public folder contents
-        run: |
-          echo "=== Images folder ==="
-          ls -la ./public/images/ || echo "No images folder"
-          echo "=== Static files ==="
-          find ./public -type f -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" | head -20
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Pagefind
+        run: npx pagefind --site ./public
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

@@ -76,6 +76,8 @@ params:
       href: "archive/"
     - title: "TAGS"
       href: "tags/"
+    - title: "SEARCH"
+      href: "search/"
     - title: "ABOUT"
       href: "about/"
 
