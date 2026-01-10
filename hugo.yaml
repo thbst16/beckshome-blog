@@ -57,7 +57,7 @@ params:
   reward: false
   friends: false
   bookmarks: false
-  about_me: true
+  about_me: false
   last_posts: true
   upstreamAttribution: true
 
