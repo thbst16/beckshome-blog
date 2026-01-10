@@ -10,7 +10,7 @@ The code and code narrative below reflects the changes that have been made on to
 
 **Sample App**
 
-The sample application lets you search over 3,000 waffle text entries, returning paginated search results. Auto-complete functionality provides suggestion for the most relevant search terms in the waffle text index. On top of the search results, two attributes (Scholars and Universities) are available as facets. Finally, search results in the header and body of the waffle text are highlighted. The site is available online at https://dotnet-lucene-search.azurewebsites.net/
+The sample application lets you search over 3,000 waffle text entries, returning paginated search results. Auto-complete functionality provides suggestion for the most relevant search terms in the waffle text index. On top of the search results, two attributes (Scholars and Universities) are available as facets. Finally, search results in the header and body of the waffle text are highlighted. The site is available online at https://dotnet-lucene-search.wittycoast-850643a6.eastus.azurecontainerapps.io/
 
 ![Highlighting](https://s3.amazonaws.com/s3.beckshome.com/20221122-dotnet-lucene-highlighting.jpeg)
 
