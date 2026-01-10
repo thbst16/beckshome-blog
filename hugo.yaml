@@ -113,7 +113,7 @@ params:
     enabled: true
     title: "Beckshome.com: Thomas Beck's Blog"
     subtitle: "Musings about technology and things tangentially related"
-    imageUrl: "/images/home-bg.jpg"
+    imageUrl: "images/home-bg.jpg"
     imageWidth: 100%
     imageHeight: auto
     buttons:
