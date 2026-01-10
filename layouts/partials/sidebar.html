@@ -1,0 +1,39 @@
+
+<!-- Sidebar Container -->
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    <!-- Featured Tags -->
+    {{ if .Site.Params.featured_tags }}
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>FEATURED TAGS</h5>
+        <div class="tags">
+            {{ $featured_condition_size := .Site.Params.featured_condition_size }}
+            {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+               {{ if gt (len $taxonomy.Pages) $featured_condition_size }}
+                    <a href="{{ "tags/" | absURL }}{{ $name | urlize }}" title="{{ $name }}">
+                        {{ $name }}
+                    </a>
+               {{ end }}
+            {{ end }}
+        </div>
+    </section>
+    {{ end }}
+
+    {{ if .Site.Params.last_posts }}
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>{{ .Site.Params.last_posts_title | default `LAST POSTS` }}</h5>
+        <ul>
+        {{ range ((where (where .Site.Pages "Type" "post") "IsPage" true).Limit (.Site.Params.last_posts_count | default 5 | int)) }}
+            <li><a href="{{ .RelPermalink }}">{{.Title}}</a></li>
+        {{ end }}
+        </ul>
+    </section>
+    {{ end }}
+</div>
