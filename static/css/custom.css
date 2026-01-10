@@ -1,0 +1,53 @@
+/* Custom CSS for Beckshome Blog */
+
+/* Add dark overlay to header for better text contrast */
+.intro-header {
+    position: relative;
+}
+
+.intro-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.5)
+    );
+    z-index: 1;
+}
+
+.intro-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Make header text more prominent */
+.intro-header .site-heading h1,
+.intro-header .page-heading h1 {
+    font-weight: 700;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.intro-header .site-heading .subheading,
+.intro-header .page-heading .subheading {
+    font-weight: 400;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Post heading improvements */
+.intro-header .post-heading h1 {
+    font-weight: 700;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.intro-header .post-heading .meta {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Tag styling in header */
+.intro-header .tags a.tag {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}

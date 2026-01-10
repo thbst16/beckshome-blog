@@ -61,19 +61,23 @@ params:
   last_posts: true
   upstreamAttribution: true
 
+  # Custom CSS
+  custom_css:
+    - "css/custom.css"
+
   # Social links
   social:
     rss: true
     github: "https://github.com/thbst16"
 
-  # Menu items
+  # Menu items (hrefs without leading slash for relLangURL)
   additional_menus:
     - title: "ARCHIVE"
-      href: "/archive/"
+      href: "archive"
     - title: "TAGS"
-      href: "/tags/"
+      href: "tags"
     - title: "ABOUT"
-      href: "/about/"
+      href: "about"
 
 # Markup settings
 markup:
