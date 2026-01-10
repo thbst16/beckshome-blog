@@ -9,7 +9,7 @@ I have three requirements of a hosting provider. Once they could fulfill these 3
 
 * Host WordPress blogs.
 * Provide Subversion source control services.
-* Support [OSQA](https://www.osqa.net/), which essentially means running Python and Django
+* Support [OSQA](https://github.com/OSQA/osqa), which essentially means running Python and Django
 
 ![Dreamhost Cutover](https://s3.amazonaws.com/s3.beckshome.com/20110925-Dreamhost-Cutover.jpg)
 
@@ -18,7 +18,7 @@ Both my ex-provider and my new provider met these three requirements – my ex-p
 When I first started thinking about moving hosting providers, I considered some slightly more esoteric approaches, especially as they relate to blog hosting. I did a bit of probing and they all fell short in one area or another but are worth mentioning just due to the irregular architectures they embody.
 
 1. **WordPress on Windows Azure.** You can most certainly host WordPress on Windows Azure and SQL Server Azure. Zach Owens is an evangelist for Microsoft who is supporting this and blogs all about it. It sounds interesting but I get the sense that this is just some sort of Microsoft pet project and the floor on it could drop out at any time.
-2. **WordPress on Amazon EC2 Micro Instances.** I loved the ideas Ashley Schroder presented in his [blog post on clustering WordPress on EC2 micro instances](http://www.aschroder.com/2011/06/clustering-wordpress-on-amazon-ec2-micro-instances/). His approach and experiences are worth reading about and will cause you to think about and investigate EC2 spot instance pricing structure, if nothing else.
+2. **WordPress on Amazon EC2 Micro Instances.** I loved the ideas Ashley Schroder presented in his [blog post on clustering WordPress on EC2 micro instances](https://www.aschroder.com/blog-archive/). His approach and experiences are worth reading about and will cause you to think about and investigate EC2 spot instance pricing structure, if nothing else.
 3. **BlogEngine on EC2 Micro Instances using SQL Azure.** A radical extension of Ashley’s ideas onto the Microsoft platform: host [BlogEngine.NET](http://www.dotnetblogengine.net/) on EC2 Micro Instances and talk to SQL Azure on the back end. This fell apart on BlogEngine’s architecture, which many posts indicate doesn’t scale out at all due to architectural limitations in the DAL and caching layers.
 
 The more I thought about it, the more I just want a stack that just works for my personal web apps. As exciting as the above options were, they sounded like massive black holes that would suck in my free time. I ultimately decided to go with a simple solution: the tried-and-proven Dreamhost (http://www.dreamhost.com), a Linux provider, for my needs. I get what I need for less than $10 US per month and I can ramp up Amazon EC2 spot instances when I need a throw-away playground. The move over was a lot easier than I expected, consisting of the following three steps:

@@ -10,7 +10,7 @@ While [useful and recent tutorials](https://code-maze.com/how-to-implement-lucen
 
 **Sample App**
 
-The sample application generates sample waffle text, indexes this text and provides a web search front end. The image below illustrates the basic user interface. This site is available online at https://dotnet-lucene-search.azurewebsites.net/ with the source code for this tutorial at https://github.com/thbst16/dotnet-lucene-search/tree/main/1-BasicSearch. 
+The sample application generates sample waffle text, indexes this text and provides a web search front end. The image below illustrates the basic user interface. This site is available online at https://dotnet-lucene-search.wittycoast-850643a6.eastus.azurecontainerapps.io/ with the source code for this tutorial at https://github.com/thbst16/dotnet-lucene-search/tree/main/1-BasicSearch. 
 
 ![BlazorCrud Home Page](https://s3.amazonaws.com/s3.beckshome.com/20221029-dotnet-lucene-search-basic.jpeg)
 

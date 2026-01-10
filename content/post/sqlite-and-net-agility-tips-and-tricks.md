@@ -63,7 +63,7 @@ using System;
 
 **SQLite as a Membership and Role Provider**
 
-Both ASP.NET MVC and WCF RIA Services use SQL Server ASP.NET Membership and Role Providers by default. Take SQL Server out of the equation and swap in the [custom SQLite Membership and Role Providers](http://www.nullskull.com/articles/20051119.asp) and you can use SQLite for your security data as well. Configuration of the custom provider can all be done right in the web.config file, as illustrated below.
+Both ASP.NET MVC and WCF RIA Services use SQL Server ASP.NET Membership and Role Providers by default. Take SQL Server out of the equation and swap in the custom SQLite Membership and Role Providers and you can use SQLite for your security data as well. Configuration of the custom provider can all be done right in the web.config file, as illustrated below.
 
 ```xml
 <configuration>
@@ -91,4 +91,4 @@ Both ASP.NET MVC and WCF RIA Services use SQL Server ASP.NET Membership and Role
 ```
 **SQLite Logging and Tracing with NLog**
 
-I [recently covered](/2010/03/logging-to-sqlite-with-nlog) the integration of [NLog](http://nlog-project.org/archives/) with SQLite. A simple configuration file entry and all of your log and trace output can go into a single SQLite database.
+I [recently covered](/2010/03/logging-to-sqlite-with-nlog) the integration of [NLog](https://nlog-project.org/) with SQLite. A simple configuration file entry and all of your log and trace output can go into a single SQLite database.
