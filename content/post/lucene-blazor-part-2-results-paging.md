@@ -10,7 +10,7 @@ The code and code narrative below reflects the changes that have been made since
 
 **Sample App**
 
-The sample application generates 3,000 waffle text records with the exact count being configurable and stored in the appsettings.json file. These waffle items can be searched and return in paginated form with a default page size of 5 records (not configurable). Additional character escaping / nulling has been added to remove characters from searches prior to passing them to the search engine. The site is available online at https://dotnet-lucene-search.azurewebsites.net/
+The sample application generates 3,000 waffle text records with the exact count being configurable and stored in the appsettings.json file. These waffle items can be searched and return in paginated form with a default page size of 5 records (not configurable). Additional character escaping / nulling has been added to remove characters from searches prior to passing them to the search engine. The site is available online at https://dotnet-lucene-search.wittycoast-850643a6.eastus.azurecontainerapps.io/
 
 ![Results Paging](https://s3.amazonaws.com/s3.beckshome.com/20221104-dotnet-lucene-search-pagination.jpeg)
 
