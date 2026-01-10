@@ -1,7 +1,0 @@
-sequenceDiagram
-    User-->Application: Update My Address
-    Application-->AddressValidationAPI: Validate
-    break if address validation API call fails
-        Application-->User: show failure
-    end
-    Application-->AddressService: Update User Address

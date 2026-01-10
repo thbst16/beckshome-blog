@@ -1,6 +1,7 @@
 ---
 title: "Lucene + Blazor, Part 1: Basic Search"
 date: 2022-10-30
+slug: lucene-blazor-part-1-basic-search
 tags: ["Lucene.NET", ".NET"]
 draft: false
 ---Lucene.NET is a C# port of the Java Lucene search engine library. Lucene.NET provides robust search and index capabilities enhanced by a wide array of support packages (e.g. auto-suggest, faceting) that enable the creation of robust search facilities within .NET applications. 

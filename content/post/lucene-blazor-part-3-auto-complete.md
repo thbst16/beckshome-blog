@@ -1,6 +1,7 @@
 ---
 title: "Lucene + Blazor, Part 3: Auto Complete"
 date: 2022-11-12
+slug: lucene-blazor-part-3-auto-complete
 tags: ["Lucene.NET", ".NET"]
 draft: false
 ---In this third installment of my Blazor + Lucene.Net series, I'll start tackling some advanced Lucene functionality, namely auto-complete. For advanced Lucene work, the most important lessons is <b>don't roll your own</b> functionality. If you go to the [docs for the Lucene.Net API](https://lucenenet.apache.org/docs/4.8.0-beta00007/api/Lucene.Net/overview.html), you'll see that a ton of additional functionality is built into Lucene via modules. Modules exist for faceting, highlighting, spatial search and autosuggest, amongst others. Lots of the examples and StackOverflow answers are roll-your-own solutions -- don't do it!!

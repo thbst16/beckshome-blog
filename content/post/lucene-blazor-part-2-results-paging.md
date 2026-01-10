@@ -1,6 +1,7 @@
 ---
 title: "Lucene + Blazor, Part 2: Results Paging"
 date: 2022-11-05
+slug: lucene-blazor-part-2-results-paging
 tags: ["Lucene.NET", ".NET"]
 draft: false
 ---In the [first installment of this series](https://beckshome.com/2022/10/lucene-blazor-part-1-basic-search), we looked at returning results from a limited pool of items in a Lucene full text index. In this second installment, we significantly increase the number of generated items (3,000, by default) and add a numbered paging system, as used by the main commercial search engines and search sites.

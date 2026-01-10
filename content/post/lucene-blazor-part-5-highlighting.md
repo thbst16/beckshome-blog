@@ -1,6 +1,7 @@
 ---
 title: "Lucene + Blazor, Part 5: Highlighting"
 date: 2022-11-25
+slug: lucene-blazor-part-5-highlighting
 tags: ["Lucene.NET", ".NET"]
 draft: false
 ---In this final installment of my Blazor + Lucene.Net series, we'll be adding highlights for the search terms found in the header and body text of each of our results. The implementation of highlighting makes use of the Lucene.Net.Highlighter library, plugging this library into a simple method that can be used as a filter for search results to highlight key terms. 

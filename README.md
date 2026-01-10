@@ -1,24 +1,105 @@
-# dotnet-statiq-beckshome-blog
+# beckshome-blog
 
 ![Uptime Robot ratio (7 days)](https://img.shields.io/uptimerobot/ratio/7/m792586859-9634d4aa6352cf540b960a54?logo=http)
 
-The dotnet-statiq-beckshome-blog solution is the fourth version of my blog's (https://blog.beckshome.com) hosting engine. I have moved from the original Das Blog to Wordpress (hosted and then static) to a .NET-based static site generator ([Statiq](https://www.statiq.dev/web)). As part of this port, all of my content was converted to relatively standard markdown format and I kept the external S3 blob storage for images. This standardization of content input will enable me to relatively easily import my blog content to other markdown-based static site generators in the future, if required.
+A Hugo-powered blog hosted on GitHub Pages at https://thbst16.github.io/beckshome-blog/
 
-# Solution Highlights
+This is the fifth iteration of my blog's hosting engine, having migrated from Das Blog → WordPress → Statiq.net → Hugo.
 
-It took a couple of iterations to get all the features right that were needed to replicate the existing Beckshome.com blog functionality. I've included below specific features and functions that are instrumental to the functionality of the blog:
+## Technology Stack
 
-* Statiq web framework - https://www.statiq.dev/web
-* Statiq clean blogging theme - https://github.com/statiqdev/CleanBlog
-* Giscus for commenting - https://giscus.app
-* EnlightenerJS for code highlighting - https://github.com/EnlighterJS/EnlighterJS
-* Azure App Service deployment - https://www.statiq.dev/guide/deployment/azure-app-service
-* Setting the post destination path for REST'ful URLs - https://github.com/statiqdev/CleanBlog/blob/main/README.md#post-destination-path
+- **Static Site Generator**: [Hugo](https://gohugo.io/) (Extended v0.154.3+)
+- **Theme**: [hugo-theme-cleanwhite](https://github.com/zhaohuabing/hugo-theme-cleanwhite) - Full-width hero images with clean typography
+- **Search**: [Pagefind](https://pagefind.app/) - Client-side static search
+- **Hosting**: GitHub Pages
+- **CI/CD**: GitHub Actions
 
-# Motivation and Credits
+## Features
 
-There were two specific reference sites that were particularly helpful in my Statiq journey:
+- Full-width hero images on homepage and posts
+- Client-side search powered by Pagefind
+- Tag-based content organization
+- Archive page for chronological browsing
+- RSS feed
+- Mobile-responsive design
+- Dark mode support (theme-provided)
 
-* [Migrating to Statiq](https://www.techwatching.dev/posts/migrating-blog) - Awesome blog post on getting Statiq set up, using a theme and deploying giscus. The source code for the site is on GitHub and is a very useful datapoint.
-* [Continuous Deployment of Statiq to Azure](https://www.developmomentum.com/blog/continuously_deploy_a_static_website_with_azure_pipelines.html) - Although I rolled back my deployment from Azure Blob hosting to Azure Web Apps, this article helped me get the Blog hosting deployment pipeline setup in Azure DevOps. As a caveat, there's some additional work to get REST urls working on static hosting that made this approach not immediately worth it for me.
-* [Using Mermaid Diagrams with Statiq](https://www.dpvreony.com/articles/mermaid-with-statiq/) - Great post on using dynamically generated diagrams inside a Statiq web site.
+## Local Development
+
+### Prerequisites
+
+- Hugo Extended (v0.154.3 or later)
+- Git (for theme submodule)
+- Node.js (for Pagefind, optional for local dev)
+
+### Setup
+
+```bash
+# Clone with submodules
+git clone --recurse-submodules https://github.com/thbst16/beckshome-blog.git
+cd beckshome-blog
+
+# Or if already cloned, initialize submodules
+git submodule update --init --recursive
+
+# Run local server
+hugo server -D
+```
+
+The site will be available at http://localhost:1313/beckshome-blog/
+
+### Building for Production
+
+```bash
+hugo --gc --minify
+```
+
+### Running Pagefind Locally
+
+```bash
+npx pagefind --site ./public
+```
+
+## Project Structure
+
+```
+beckshome-blog/
+├── .github/workflows/    # GitHub Actions deployment
+├── archetypes/           # Hugo content templates
+├── content/
+│   ├── post/             # Blog posts
+│   ├── about/            # About page
+│   ├── archive/          # Archive page
+│   └── search/           # Search page
+├── layouts/              # Theme overrides
+│   ├── _default/         # Default layouts
+│   ├── partials/         # Partial templates
+│   └── taxonomy/         # Taxonomy layouts
+├── static/
+│   ├── css/              # Custom CSS
+│   ├── images/           # Site images (hero, etc.)
+│   └── img/              # Favicon and icons
+├── themes/               # Hugo themes (submodule)
+└── hugo.yaml             # Site configuration
+```
+
+## Deployment
+
+The site automatically deploys to GitHub Pages when changes are pushed to the `main` branch. The GitHub Actions workflow:
+
+1. Builds the Hugo site
+2. Runs Pagefind to generate search indexes
+3. Deploys to GitHub Pages
+
+## Customizations
+
+This site includes several layout overrides to ensure proper URL handling on GitHub Pages:
+
+- `layouts/partials/nav.html` - Navigation with correct base URL handling
+- `layouts/partials/sidebar.html` - Sidebar with fixed tag links
+- `layouts/_default/search.html` - Pagefind search integration
+- `static/css/custom.css` - Enhanced text contrast on hero images
+
+## License
+
+Content is copyright Thomas Beck. Theme is licensed under MIT.
