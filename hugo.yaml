@@ -170,11 +170,19 @@ markup:
     renderer:
       unsafe: true  # Allow HTML in markdown
   highlight:
-    noClasses: false
+    anchorLineNos: false
     codeFences: true
     guessSyntax: true
+    hl_Lines: ""
+    hl_inline: false
+    lineAnchors: ""
+    lineNoStart: 1
     lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    noHl: false
     style: dracula
+    tabWidth: 4
 
 # Output formats
 outputs:
