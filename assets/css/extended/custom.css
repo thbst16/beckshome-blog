@@ -1,0 +1,121 @@
+/* Full-width hero image for homepage - Clean Blog style */
+
+.profile {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.profile .profile_inner {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    max-width: 800px;
+}
+
+/* Make the image a full-bleed background */
+.profile .profile_inner > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+    border-radius: 0;
+    margin-left: calc(-50vw + 50%);
+}
+
+/* Dark overlay for text readability */
+.profile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Style the title and subtitle for overlay */
+.profile .profile_inner h1 {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0.5rem;
+}
+
+.profile .profile_inner > span {
+    position: relative;
+    z-index: 2;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.25rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+/* Style the social icons */
+.profile .social-icons {
+    position: relative;
+    z-index: 2;
+}
+
+.profile .social-icons a {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    padding: 0.5rem;
+    margin: 0 0.25rem;
+    transition: background 0.3s ease;
+}
+
+.profile .social-icons a:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Style the buttons */
+.profile .buttons {
+    position: relative;
+    z-index: 2;
+    margin-top: 1rem;
+}
+
+.profile .buttons .button {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    margin: 0.25rem;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.profile .buttons .button:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .profile {
+        min-height: 50vh;
+    }
+
+    .profile .profile_inner h1 {
+        font-size: 1.75rem;
+    }
+
+    .profile .profile_inner > span {
+        font-size: 1rem;
+    }
+}
