@@ -1,8 +1,10 @@
 baseURL: "https://thbst16.github.io/beckshome-blog/"
 title: "Beckshome.com: Thomas Beck's Blog"
+theme: "hugo-theme-cleanwhite"
+languageCode: "en-us"
+
 pagination:
   pagerSize: 10
-theme: "PaperMod"
 
 # Build settings
 enableRobotsTXT: true
@@ -10,148 +12,81 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 
-# Minification
-minify:
-  disableXML: true
-  minifyOutput: true
-
-# Language
-languageCode: "en-us"
-defaultContentLanguage: "en"
-
 # Taxonomies
 taxonomies:
   tag: tags
   category: categories
 
-# Permalinks (maintain URL structure if needed)
+# Permalinks
 permalinks:
-  posts: "/:year/:month/:slug/"
+  post: "/:year/:month/:slug/"
 
-# Menu
-menu:
-  main:
-    - identifier: home
-      name: Home
-      url: /
-      weight: 10
-    - identifier: posts
-      name: Posts
-      url: /posts/
-      weight: 20
-    - identifier: archives
-      name: Archives
-      url: /archives/
-      weight: 30
-    - identifier: tags
-      name: Tags
-      url: /tags/
-      weight: 40
-    - identifier: search
-      name: Search
-      url: /search/
-      weight: 50
-    - identifier: about
-      name: About
-      url: /about/
-      weight: 60
+# Outputs
+outputs:
+  home:
+    - HTML
+    - RSS
 
-# PaperMod specific parameters
+# Cleanwhite theme parameters
 params:
-  # Environment
-  env: production
+  # Header image for homepage
+  header_image: "images/home-bg.jpg"
 
-  # Site metadata
-  title: "Beckshome.com: Thomas Beck's Blog"
+  # SEO and metadata
+  SEOTitle: "Beckshome.com: Thomas Beck's Blog"
   description: "Musings about technology and things tangentially related"
-  keywords: ["Blog", "Technology", "Development", "Architecture"]
-  author: "Thomas Beck"
+  keyword: "Blog, Technology, Development, Architecture, Software"
+  slogan: "Musings about technology and things tangentially related"
 
-  # Images for social sharing
-  images: ["/images/home-bg.jpg"]
+  # 404 page
+  image_404: "images/home-bg.jpg"
+  title_404: "Page not found :("
 
-  # Date format
-  DateFormat: "January 2, 2006"
+  # Sidebar settings
+  sidebar_about_description: "Software developer and technology enthusiast sharing thoughts on development, architecture, and tech."
+  sidebar_avatar: "images/home-bg.jpg"
 
-  # Theme settings
-  defaultTheme: auto  # auto, light, dark
-  disableThemeToggle: false
+  # Features
+  featured_tags: true
+  featured_condition_size: 1
+  omit_categories: false
 
-  # Reading experience
-  ShowReadingTime: true
-  ShowShareButtons: false
-  ShowPostNavLinks: true
-  ShowBreadCrumbs: true
-  ShowCodeCopyButtons: true
-  ShowWordCount: false
-  ShowRssButtonInSectionTermList: true
-  UseHugoToc: true
-  disableSpecial1stPost: false
-  disableScrollToTop: false
+  # Disable features we don't need
+  algolia_search: false
+  page_view_counter: false
+  reward: false
+  friends: false
+  bookmarks: false
+  about_me: true
+  last_posts: true
+  upstreamAttribution: true
 
-  # Comments (configure if using Disqus, Giscus, etc.)
-  comments: false
+  # Social links
+  social:
+    rss: true
+    github: "https://github.com/thbst16"
 
-  # Meta
-  hideMeta: false
-  hideSummary: false
+  # Menu items
+  additional_menus:
+    - title: "ARCHIVE"
+      href: "/archive/"
+    - title: "TAGS"
+      href: "/tags/"
+    - title: "ABOUT"
+      href: "/about/"
 
-  # Table of contents (disabled - most posts use HTML headings)
-  showtoc: false
-  tocopen: false
-
-  # Assets/favicon
-  assets:
-    favicon: "/favicon.ico"
-
-  # Label (top-left branding)
-  label:
-    text: "Beckshome"
-
-  # Home page profile mode with header image
-  profileMode:
-    enabled: true
-    title: "Beckshome.com: Thomas Beck's Blog"
-    subtitle: "Musings about technology and things tangentially related"
-    imageUrl: "images/home-bg.jpg"
-    imageWidth: 100%
-    imageHeight: auto
-    buttons:
-      - name: Posts
-        url: /posts/
-      - name: Tags
-        url: /tags/
-      - name: Archives
-        url: /archives/
-
-  # Social icons (shown on home page)
-  socialIcons:
-    - name: github
-      url: "https://github.com/thbst16"
-    - name: rss
-      url: "index.xml"
-
-  # Cover image defaults
-  cover:
-    hidden: false
-    hiddenInList: false
-    hiddenInSingle: false
-
-  # Edit post link (optional - links to GitHub)
-  editPost:
-    URL: "https://github.com/thbst16/beckshome-blog/tree/main/content"
-    Text: "Suggest Changes"
-    appendFilePath: true
-
-  # Search (Fuse.js)
-  fuseOpts:
-    isCaseSensitive: false
-    shouldSort: true
-    location: 0
-    distance: 1000
-    threshold: 0.4
-    minMatchCharLength: 0
-    keys: ["title", "permalink", "summary", "content"]
+# Markup settings
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: dracula
+    codeFences: true
+    guessSyntax: true
+    lineNos: false
+    noClasses: true
+    tabWidth: 4
 
 # Privacy settings
 privacy:
@@ -167,31 +102,3 @@ privacy:
     disable: true
   youtube:
     disable: true
-
-# Markup settings
-markup:
-  goldmark:
-    renderer:
-      unsafe: true  # Allow HTML in markdown
-  highlight:
-    anchorLineNos: false
-    codeFences: true
-    guessSyntax: true
-    hl_Lines: ""
-    hl_inline: false
-    lineAnchors: ""
-    lineNoStart: 1
-    lineNos: false
-    lineNumbersInTable: true
-    noClasses: true
-    noHl: false
-    style: dracula
-    tabWidth: 4
-
-# Output formats
-outputs:
-  home:
-    - HTML
-    - RSS
-    - JSON  # Required for search
-

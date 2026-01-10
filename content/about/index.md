@@ -1,9 +1,8 @@
 ---
+layout: page
 title: "About Me"
-url: "/about/"
-summary: "About this blog"
-hidemeta: true
 ---
+
 This is a no technology zone. I have enough of that in my blog. It also won't be a boring diatribe about my life or what I do. Instead, a couple of fun facts and pictures:
 
 * Spent nearly 8 years of his life in Germany. Went to university there, worked there, drove very, very fast there. The image is of his German drivers license - scary, eh?
