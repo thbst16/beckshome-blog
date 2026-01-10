@@ -194,3 +194,4 @@ outputs:
     - HTML
     - RSS
     - JSON  # Required for search
+
