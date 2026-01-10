@@ -3,7 +3,7 @@ title: "Wordpress for Business Bloggers"
 date: 2009-06-23
 tags: ["Blog", "Book Reviews"]
 draft: false
----After more than a year-long hiatus, this entry marks my return to blogging. One of the things I decided to do to get myself back into the spirit of blogging was to change my blogging engine. I made the move from the [.NET-based DasBlog](/2006/06/das-blog-installation) to the more mainstream WordPress platform. I will be providing more information about the migration process (specifically, WordPress on IIS 7), helpful tools and tutorials, and useful WordPress plugins in an upcoming blog post.
+---After more than a year-long hiatus, this entry marks my return to blogging. One of the things I decided to do to get myself back into the spirit of blogging was to change my blogging engine. I made the move from the [.NET-based DasBlog](/2006/06/dasblog-installation) to the more mainstream WordPress platform. I will be providing more information about the migration process (specifically, WordPress on IIS 7), helpful tools and tutorials, and useful WordPress plugins in an upcoming blog post.
 
 ![WordPress for Business Bloggers](https://s3.amazonaws.com/s3.beckshome.com/20090623-WordPress-for-Business-Bloggers.png)
 

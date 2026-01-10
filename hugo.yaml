@@ -103,15 +103,10 @@ params:
   # Assets/favicon
   assets:
     favicon: "/favicon.ico"
-    favicon16x16: "/favicon-16x16.png"
-    favicon32x32: "/favicon-32x32.png"
-    apple_touch_icon: "/apple-touch-icon.png"
 
   # Label (top-left branding)
   label:
     text: "Beckshome"
-    icon: "/apple-touch-icon.png"
-    iconHeight: 35
 
   # Home page mode: regular, profile, or homeInfoParams
   homeInfoParams:

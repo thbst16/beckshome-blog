@@ -3,7 +3,7 @@ title: "WordPress on IIS7"
 date: 2009-07-03
 tags: ["Blog", "New Technology"]
 draft: false
----I had long planned the move from the .NET-based [DasBlog blogging engine](/2006/06/das-blog-installation) to WordPress but just couldn’t seem to make the time to complete the move. I finally pulled the trigger and cutover to WordPress a couple of weeks ago. The process was not nearly as painful as I imagined and I’m now beginning to reap the rewards of working on a blogging platform that’s more broadly integrated into the Web ecosystem. This blog entry is a collection of the key technical takeaways from my migration. Hopefully they will be helpful for other people looking to migrate to WordPress, especially on the Microsoft IIS platform.
+---I had long planned the move from the .NET-based [DasBlog blogging engine](/2006/06/dasblog-installation) to WordPress but just couldn’t seem to make the time to complete the move. I finally pulled the trigger and cutover to WordPress a couple of weeks ago. The process was not nearly as painful as I imagined and I’m now beginning to reap the rewards of working on a blogging platform that’s more broadly integrated into the Web ecosystem. This blog entry is a collection of the key technical takeaways from my migration. Hopefully they will be helpful for other people looking to migrate to WordPress, especially on the Microsoft IIS platform.
 
 ![Wordpress on IIS 7](https://s3.amazonaws.com/s3.beckshome.com/20090703-Wordpress-On-IIS7.jpg)
 
